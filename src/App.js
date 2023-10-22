@@ -1,19 +1,26 @@
 import "./App.css";
-import ForwardCounter from "./components/ForwardCounter";
-import BackwardCounter from "./components/BackwardCounter";
+import Header from "./components/Layout/Header";
+import Flowers from "./components/Flowers/Flowers";
+import { useState } from "react";
+import CartProvider from "./store/CartProvider";
+import Cart from "./components/Cart/Cart";
 
 function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
   return (
-    <div className="main">
-      <div className="App">
-        <h2 className="Title">Counter</h2>
+    <CartProvider>
+      <div className="main">
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
+        <Header onShowCart={showCartHandler} />
+        <Flowers />
       </div>
-
-      <div className="Content">
-        <ForwardCounter />
-        <BackwardCounter />
-      </div>
-    </div>
+    </CartProvider>
   );
 }
 

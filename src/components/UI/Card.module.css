@@ -1,10 +1,9 @@
 .card {
   display: flex;
-
   justify-content: center;
   margin: 3%;
   background: #ffff;
-  width: 95%;
-  height: 3vh;
+  width: 65%;
+  height: 20%;
   border-radius: 12px;
 }

@@ -1,0 +1,63 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+  height: 70%;
+  width: 15%;
+  overflow: hidden;
+  margin-left: 50%;
+  border-radius: 30px;
+  background-color: goldenrod;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover,
+.btn:active {
+  background-color: rgb(179, 138, 35);
+}
+.num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(116, 115, 112);
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+}
+.num:active,
+.num:hover {
+  background-color: goldenrod;
+}
+
+@media (max-width: 960px) {
+  .btn {
+    width: 25%;
+    margin-left: 30%;
+  }
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
